@@ -54,3 +54,11 @@ npm run start:dev
 - [POST]/list-items
 - [DELETE]/list-items/:id
 - [PUT]/list-items/:id
+
+## Documentation:
+
+Use insominia to impost the file bellow:
+
+```
+https://github.com/JOAOmarcelo1604/supermarket-list-api/blob/main/Insomnia.json
+```
