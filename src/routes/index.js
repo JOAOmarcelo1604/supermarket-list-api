@@ -8,7 +8,14 @@ routes.get("/", (req, res) => {
 
 routes.get("/list-items", async (req, res) => {
   try {
-    const items = await ListItem.find();
+    const { username } = req.headers;
+    if (!username) {
+      return res.status(401).json({ error: "Nome de usuario obrigatorio" });
+    }
+
+    const items = await ListItem.find({
+      username,
+    });
     return res.json(items);
   } catch (error) {
     return res.status(400).json({ error });
@@ -17,6 +24,11 @@ routes.get("/list-items", async (req, res) => {
 
 routes.post("/list-items", async (req, res) => {
   try {
+    const { username } = req.headers;
+    if (!username) {
+      return res.status(401).json({ error: "Nome de usuario obrigatorio" });
+    }
+
     const { name, quantity, checked } = req.body;
     if (!name || name.length < 3) {
       return res.status(400).json({
@@ -33,6 +45,7 @@ routes.post("/list-items", async (req, res) => {
       name,
       quantity,
       checked: checked || false,
+      username,
     });
     return res.json(newItem);
   } catch (error) {

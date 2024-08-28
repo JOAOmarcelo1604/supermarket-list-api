@@ -1,10 +1,10 @@
 ## Supermarket List API
 
-API in Node.js using Express and Mongoose to connect a MongoDB Database
-The main objective is to make life easier for application users who go to the supermarket and forget the items they went to buy.
-So this API aims to organize this shopping list.
+API em Node.js usando Express e Mongoose para conectar a um banco de dados MongoDB.
 
-### Technologies used
+O objetivo principal é facilitar a vida dos usuários do aplicativo que vão ao supermercado e esquecem os itens que precisavam comprar. Assim, essa API tem como finalidade organizar essa lista de compras.
+
+### Tecnologias Usadas
 
 -Node.js
 -Express
@@ -12,52 +12,58 @@ So this API aims to organize this shopping list.
 -MongoDB
 -Nodemon
 
-### Required Technologies
+### Tecnologias Necessárias
 
-- Node.js installed (https://nodejs.org)
-- MongoDB instance running:
-  Ex:Running with docker
+- Node.js instalado (https://nodejs.org)
+  -Express
+  -Mongoose
+- MongoDB instância em execução:
+  Ex:Rodar com docker
 
 ```
 docker run --name supermarket-list -p 27017:27017 -d mongo
 ```
 
-### Steps to run the project
+### Passos para executar o projeto
 
-1- Clone the repo:
+1- Clone o repositório:
 
 ```
 git clone https://github.com/JOAOmarcelo1604/supermarket-list-api
 ```
 
-2- Navigate to the repo:
+2- Navegue até o repositório:
 
 ```
 cd supermarket-list-api
 ```
 
-3- Install the dependencies:
+3- Instale as dependências:
 
 ```
 npm install
 ```
 
-4- Run the API:
+4- Execute a API:
 
 ```
 npm run start:dev
 ```
 
-### Available endpoints
+### Regra Importante
+
+É necessário enviar o nome de usuário no cabeçalho da requisição
+
+### Endpoints Disponíveis
 
 - [GET]/list-items
 - [POST]/list-items
 - [DELETE]/list-items/:id
 - [PUT]/list-items/:id
 
-## Documentation:
+### Documentação:
 
-Use insominia to impost the file bellow:
+Use o Insomnia para importar o arquivo abaixo:
 
 ```
 https://github.com/JOAOmarcelo1604/supermarket-list-api/blob/main/Insomnia.json
